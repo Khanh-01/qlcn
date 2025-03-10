@@ -4,14 +4,17 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         TeacherManager teacherManager = new TeacherManager();
         while (true) {
-            System.out.println("Menu: ");
-            System.out.println("1.Thêm");
+            System.out.println("Menu:");
+            System.out.println("1. Thêm");
             System.out.println("2. Xóa");
             System.out.println("3. Xem danh sách");
             System.out.println("4. Xem chi tiết");
-            System.out.println("5. Thoát");
+            System.out.println("5. Tìm kiếm giáo viên theo từ khóa");
+            System.out.println("6. Thống kê lương cao nhất/thấp nhất");
+            System.out.println("7. Thoát");
             int choice = scanner.nextInt();
             scanner.nextLine();
+
             switch (choice) {
                 case 1:
                     String fullName = scanner.nextLine();
@@ -43,6 +46,15 @@ public class Main {
                     break;
 
                 case 5:
+                    String keyword = scanner.nextLine();
+                    teacherManager.searchTeacherByKeyword(keyword);
+                    break;
+
+                case 6:
+                    teacherManager.displayHighestAndLowestSalary();
+                    break;
+
+                case 7:
                     System.out.println("Thoát");
                     return;
             }

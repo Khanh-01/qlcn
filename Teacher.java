@@ -3,6 +3,7 @@ public class Teacher extends Person {
     private double bonus;        // Lương thưởng
     private double penalty;      // Tiền phạt
     private double actualSalary; // Lương thực lĩnh
+
     public Teacher(String fullName, int age, String hometown, String teacherID, double basicSalary, double bonus, double penalty) {
         super(fullName, age, hometown, teacherID);
         this.basicSalary = basicSalary;
